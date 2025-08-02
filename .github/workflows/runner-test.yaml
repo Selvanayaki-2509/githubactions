@@ -1,10 +1,43 @@
 name: test runner job
+
 on:
   push:
     branches:
       - "feature/*"
+
 jobs:
   firstjob:
     runs-on: "arc-runner-linux"
     steps:
-      - run: "echo test runner execution"
+      - name: First Job - Sleep
+        run: |
+          echo "Starting first job"
+          sleep 40
+          echo "First job done"
+
+  secondjob:
+    runs-on: "arc-runner-linux"
+    steps:
+      - name: Second Job - Sleep
+        run: |
+          echo "Starting second job"
+          sleep 40
+          echo "Second job done"
+
+  thirdjob:
+    runs-on: "arc-runner-linux"
+    steps:
+      - name: Third Job - Sleep
+        run: |
+          echo "Starting third job"
+          sleep 40
+          echo "Third job done"
+
+  fourthjob:
+    runs-on: "arc-runner-linux"
+    steps:
+      - name: Fourth Job - Sleep
+        run: |
+          echo "Starting fourth job"
+          sleep 40
+          echo "Fourth job done"
